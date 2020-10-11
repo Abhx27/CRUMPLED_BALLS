@@ -11,13 +11,23 @@ function preload()
 }
 
 function setup() {
-	createCanvas(800, 700);
+	createCanvas(1000, 700);
 
+	lineSprite=createSprite(800, height-35, 200,10);
+	lineSprite.shapeColor=color(255,0,0)
+
+	line2Sprite=createSprite(700, height-80, 10,100);
+	line2Sprite.shapeColor=color(255,0,0)
+
+	line3Sprite=createSprite(900, height-80, 10,100);
+	line3Sprite.shapeColor=color(255,0,0)
 
 	engine = Engine.create();
 	world = engine.world;
 
 	//Create the Bodies Here.
+	paper = createSprite(100,height-35,30,30)
+	paper.shapeColor=color(255,0,254)
 
 
 	Engine.run(engine);
@@ -33,7 +43,7 @@ function draw() {
  
 }
 function keyPressed(){
-	if(keyCode === UP_ARROW) {
+	if(keyDown === UP_ARROW) {
 		matter.body.applyForce(paperObject.body,paperObject.body.position)
 	}
 }
