@@ -1,4 +1,3 @@
-
 var paperObject
 const Engine = Matter.Engine;
 const World = Matter.World;
@@ -30,6 +29,7 @@ function setup() {
 	paper.shapeColor=color(255,0,254)
 
 
+
 	Engine.run(engine);
   
 }
@@ -39,14 +39,16 @@ function draw() {
   rectMode(CENTER);
   background(0);
   
+  if (keyDown("RIGHT_ARROW")) {
+    paper.velocityX(5)
+  }
+
+  if (keyDown("LEFT_ARROW")) {
+    paper.velocityX(-5)
+  }
+
+
   drawSprites();
  
 }
-function keyPressed(){
-	if(keyDown === UP_ARROW) {
-		matter.body.applyForce(paperObject.body,paperObject.body.position)
-	}
-}
-
-
 
